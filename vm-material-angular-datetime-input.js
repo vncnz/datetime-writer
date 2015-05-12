@@ -10,22 +10,26 @@ angular.module('vm-material-angular-datetime-input', []).directive('vmValidDatet
       var invalidIndexes = ['years', 'months', 'days', 'hours', 'minutes', 'seconds', 'milliseconds'];
 
       scope.errorAt = -1000;
+      scope.formats = attrs.formats ? attrs.formats.split(";") : [ "D-M-YYYY [at] H:mm",
+                                                    "D-M-YYYY[@]H:mm",
+                                                    "D-M-YYYY H:mm",
+                                                    "D/M/YYYY [at] H:mm",
+                                                    "D/M/YYYY[@]H:mm",
+                                                    "D/M/YYYY H:mm"];
+      console.log(scope.formats);
 
       ctrl.$formatters.push(function(value) {
         //console.log("Formatting");
         //ctrl.$setPristine();
         var dt = moment(scope.ngModel);
-        return dt.isValid() ? dt.format("DD-MM-YYYY [at] HH:mm") : null;
+        return dt.isValid() ? dt.format(scope.formats[0]) : null;
       });
 
       ctrl.$parsers.push(function(newValue) {
         //console.log(newValue);
 
         var mom = moment(newValue, 
-          ["DD-MM-YYYY [at] H:mm",
-           "DD-M-YYYY [at] H:mm", 
-           "D-MM-YYYY [at] H:mm",
-           "D-M-YYYY [at] H:mm"],
+          scope.formats,
           true);
         if(mom.isValid()) {
           //scope.dateModel = mom.toDate();

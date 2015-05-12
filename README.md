@@ -5,6 +5,17 @@ In the example you can see the directive used with material.angularjs (tested wi
 
 Moment.js is required, it is used for parsing, formatting and validating the datetime.
 
+If you want, you can set an attribute, called "formats", that contains dot comma separated values representing your valid datetime formats, for example
+
+```html
+<input type="text" ng-model="date" vm-valid-datetime formats="D-M-YYYY [at] H:mm;D-M-YYYY[@]H:mm"/>
+```
+
+By default, valid formats are the follows: "D-M-YYYY [at] H:mm", "D-M-YYYY[@]H:mm", "D-M-YYYY H:mm", "D/M/YYYY [at] H:mm", "D/M/YYYY[@]H:mm", "D/M/YYYY H:mm".
+
+You can see parsing tokens [here](http://momentjs.com/docs/#/parsing/string-format/).
+
+
 ![valid](/screenshots/valid.png?raw=true)
 ![invalid-empty](/screenshots/invalid-empty.png?raw=true)
 ![invalid-hour](/screenshots/invalid-hour.png?raw=true)
