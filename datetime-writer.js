@@ -1,5 +1,5 @@
 
-angular.module('vm-material-angular-datetime-input', []).directive('vmValidDatetime', function() {
+angular.module('vm-datetime-writer', []).directive('datetimeWriter', function() {
   return {
     restrict: 'A',
     require: 'ngModel',
@@ -10,7 +10,7 @@ angular.module('vm-material-angular-datetime-input', []).directive('vmValidDatet
       var invalidIndexes = ['years', 'months', 'days', 'hours', 'minutes', 'seconds', 'milliseconds'];
 
       scope.errorAt = -1000;
-      scope.formats = attrs.formats ? attrs.formats.split(";") : [ "D-M-YYYY [at] H:mm",
+      scope.formats = attrs.datetimeFormats ? attrs.datetimeFormats.split(";") : [ "D-M-YYYY [at] H:mm",
                                                     "D-M-YYYY[@]H:mm",
                                                     "D-M-YYYY H:mm",
                                                     "D/M/YYYY [at] H:mm",

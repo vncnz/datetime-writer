@@ -1,7 +1,7 @@
 
 moment.locale(window.navigator.userLanguage || window.navigator.language || 'it');
 
-var testApp = angular.module('TestApp', ['ngMaterial', 'ngMessages', 'vm-material-angular-datetime-input']);
+var testApp = angular.module('TestApp', ['ngMaterial', 'ngMessages', 'vm-datetime-writer']);
 
 
 testApp.controller('AppController', ['$scope', function ($scope) {

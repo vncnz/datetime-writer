@@ -1,14 +1,13 @@
-# vm-valid-datetime-text-input
+# datetime-writer
 
 A simple AngularJS module with a directive for creating a text input with human-friendly datetime validation.
 In the example you can see the directive used with material.angularjs (tested with v0.9) and ngMessages but you can use it with bootstrap or what you want to use.
 
 Moment.js is required, it is used for parsing, formatting and validating the datetime.
 
-If you want, you can set an attribute, called "formats", that contains dot comma separated values representing your valid datetime formats, for example
-
+If you want, you can set an attribute, called "data-formats", that contains dot comma separated values representing your valid datetime formats, i.e.
 ```html
-<input type="text" ng-model="date" vm-valid-datetime formats="D-M-YYYY [at] H:mm;D-M-YYYY[@]H:mm"/>
+<input type="text" ng-model="date" datetime-writer datetime-formats="D-M-YYYY [at] H:mm;D-M-YYYY[@]H:mm"/>
 ```
 
 By default, valid formats are the follows: "D-M-YYYY [at] H:mm", "D-M-YYYY[@]H:mm", "D-M-YYYY H:mm", "D/M/YYYY [at] H:mm", "D/M/YYYY[@]H:mm", "D/M/YYYY H:mm".
@@ -44,7 +43,7 @@ When you're done, your setup should look similar to the following:
 
 		...
 
-		<input type="text" ng-model="date" name="vmdate" required vm-valid-datetime/>
+		<input type="text" ng-model="date" name="vmdate" required datetime-writer/>
 		<div ng-messages="formDate.vmdate.$error">
 			<!--<div ng-message="parsing">Invalid date</div>-->
 			<div ng-message="invalidYear">Invalid year</div>
@@ -57,7 +56,7 @@ When you're done, your setup should look similar to the following:
 		</div>
 		
 		<script>
-			var testApp = angular.module('TestApp', ['ngMaterial', 'ngMessages', 'vm-material-angular-datetime-input']);
+			var testApp = angular.module('TestApp', ['ngMaterial', 'ngMessages', 'vm-datetime-writer']);
 		</script>
 	</body>
 </html>
