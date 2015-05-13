@@ -66,6 +66,6 @@ When you're done, your setup should look similar to the following:
 
 To create a datetime input validator:
 * Add the module vm-datetime-writer as a dependency to your app module.
-* Add the vm-valid-datetime directive to your element. A model is required.
+* Add the datetime-writer directive to your element. A model is required.
 
 I hope this can be a useful starting point for datetime inputs of your projects ;)
