@@ -1,5 +1,7 @@
 # datetime-writer
 
+Try the [DEMO](http://codepen.io/vncnz/pen/EjKWOo)!
+
 A simple AngularJS module with a directive for creating a text input with human-friendly datetime validation.
 In the example you can see the directive used with material.angularjs (tested with v0.9) and ngMessages but you can use it with bootstrap or what you want to use.
 
