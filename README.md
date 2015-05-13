@@ -37,7 +37,7 @@ When you're done, your setup should look similar to the following:
 		<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-messages.min.js'></script>
 		<script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
 		...
-		<script src="vm-material-angular-datetime-input.js"></script>
+		<script src="datetime-writer.js"></script>
 		...
 	</head>
 
@@ -65,7 +65,7 @@ When you're done, your setup should look similar to the following:
 ```
 
 To create a datetime input validator:
-* Add the module vm-material-angular-datetime-input as a dependency to your app module.
+* Add the module vm-datetime-writer as a dependency to your app module.
 * Add the vm-valid-datetime directive to your element. A model is required.
 
 I hope this can be a useful starting point for datetime inputs of your projects ;)
