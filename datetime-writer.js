@@ -16,7 +16,14 @@ angular.module('vm-datetime-writer', []).directive('datetimeWriter', function() 
                                                     "D/M/YYYY [at] H:mm",
                                                     "D/M/YYYY[@]H:mm",
                                                     "D/M/YYYY H:mm"];
-      console.log(scope.formats);
+
+      //console.log(attrs.datetimeDefaultNow + ' ' + typeof(attrs.datetimeDefaultNow));
+      if(attrs.datetimeDefaultNow==true || attrs.datetimeDefaultNow=='true') {
+        //console.log("attrs.datetimeDefaultNow is true");
+        scope.ngModel = new Date();
+      }
+
+      //console.log(scope.formats);
 
       ctrl.$formatters.push(function(value) {
         //console.log("Formatting");
@@ -67,7 +74,7 @@ angular.module('vm-datetime-writer', []).directive('datetimeWriter', function() 
         return scope.errorAt!=4;
       };
       ctrl.$validators.unknownError = function(modelValue, viewValue) {
-        console.log(viewValue);
+        //console.log(viewValue);
         return (!viewValue) || scope.errorAt==-1000;
       };
     }

@@ -69,3 +69,5 @@ To create a datetime input validator:
 * Add the datetime-writer directive to your element. A model is required.
 
 I hope this can be a useful starting point for datetime inputs of your projects ;)
+
+UPDATE: Now you can set the attribute datetime-default-now="true", in that case if model is empty it is set with current datetime.

@@ -5,5 +5,5 @@ var testApp = angular.module('TestApp', ['ngMaterial', 'ngMessages', 'vm-datetim
 
 
 testApp.controller('AppController', ['$scope', function ($scope) {
-  $scope.date = new Date(2010, 10, 10, 10, 11);
+  $scope.date = null;//new Date(2010, 10, 10, 10, 11);
 }]);
